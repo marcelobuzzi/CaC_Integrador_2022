@@ -67,3 +67,14 @@ footer {
   background: #1c445a;
   font-size: .875em;
 }
+
+@media screen and (max-width: 767.98px) {
+  .descuentos {
+    display: block !important;
+  }
+
+  .descuentos > .card {
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}

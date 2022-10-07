@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1">
+    <title>Integrador</title>
+    <link rel="icon" type="image/png" href="img/codoacodo.png" sizes="16x16 32x32">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid mx-5">
+        <a class="navbar-brand" href="index.html" target="_self">
+          <img src="img/codoacodo.png" alt="Logo" width="100" class="d-inline-block align-text-center">
+          Conf Bs As
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">La conferencia</a>
+            <a class="nav-link" href="#">Los oradores</a>
+            <a class="nav-link" href="#">El lugar y la fecha</a>
+            <a class="nav-link" href="#">Conviértete en orador</a>
+            <a class="nav-link text-success" href="#">Compra tickets</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="descuentos my-4 d-flex gap-2 justify-content-center">
+      <div class="card rounded-0 border-primary" style="width: 18rem;">
+        <div class="card-body text-center">
+          <p class="card-text h4">Estudiante</p>
+          <p class="card-text">Tienen un descuento</p>
+          <p class="card-text"><strong>80%</strong></p>
+          <p class="card-text text-muted">* presentar documentación</p>
+        </div>
+      </div>
+
+      <div class="card rounded-0 border-success" style="width: 18rem;">
+        <div class="card-body text-center">
+          <p class="card-text h4">Trainee</p>
+          <p class="card-text">Tienen un descuento</p>
+          <p class="card-text"><strong>50%</strong></p>
+          <p class="card-text text-muted">* presentar documentación</p>
+        </div>
+      </div>
+
+      <div class="card rounded-0 border-warning" style="width: 18rem;">
+        <div class="card-body text-center">
+          <p class="card-text h4">Junior</p>
+          <p class="card-text">Tienen un descuento</p>
+          <p class="card-text"><strong>15%</strong></p>
+          <p class="card-text text-muted">* presentar documentación</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row w-100 p-0 m-0">
+      <div class="col w-100 p-0 m-0 text-center">
+        <small>VENTA</small>
+      </div>
+    </div>
+    <div class="row w-100 p-0 m-0">
+      <div class="col w-100 p-0 m-0 text-center h3">
+        VALOR DE TICKET $200
+      </div>
+    </div>
+
+    <div class="container mb-3 px-5">
+      <form class="form">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 py-3">
+            <input type="text" class="form-control text-capitalize" placeholder="Nombre" required>
+            <span class="inputs-error d-none text-danger">
+              <small>Este dato es obligatorio y sólo se permitan letras y espacios</small>
+            </span>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 py-3">
+            <input type="text" class="form-control text-uppercase" placeholder="Apellido" required>
+            <span class="inputs-error d-none text-danger">
+              <small>Este dato es obligatorio y sólo se permitan letras y espacios</small>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-3">
+            <input type="email" class="email form-control" placeholder="Correo" required>
+            <span class="email-error d-none text-danger">
+              <small>Este dato es obligatorio y sólo se permiten emails válidos (Ej. nombre@dominio.com)</small>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 py-3">
+            <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad</label>
+              <input id="cantidad" type="number" class="form-control" min="1" value="1" placeholder="Cantidad">
+              <span class="cantidad-error d-none text-danger">
+                <small>Este dato es obligatorio y debe ser un número mayor que 0</small>
+              </span>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 py-3">
+            <div class="mb-3">
+              <label for="categoria" class="form-label">Categoría</label>
+              <select id="categoria" class="form-select">
+                <option selected>Seleccione...</option>
+                <option value="1">Estudiante</option>
+                <option value="2">Trainee</option>
+                <option value="3">Junior</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row py-2">
+          <div class="col">
+            <div class="alert alert-primary" role="alert">
+              Total a Pagar: $<span class="total">0.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="row py-2">
+          <div class="col-6">
+            <button class="borrar btn btn-success w-100 enviar" type="button" name="button">Borrar</button>
+          </div>
+          <div class="col-6">
+            <button class="resumen btn btn-success w-100 enviar" type="button" name="button">Resumen</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer class="container-fluid text-light">
+      <div class="row d-flex justify-content-around">
+        <div class="col-auto py-5">
+          Preguntas frecuentes
+        </div>
+        <div class="col-auto py-5">
+          Contáctanos
+        </div>
+        <div class="col-auto py-5">
+          Prensa
+        </div>
+        <div class="col-auto py-5">
+          Conferencias
+        </div>
+        <div class="col-auto py-5">
+          Términos y condiciones
+        </div>
+        <div class="col-auto py-5">
+          Privacidad
+        </div>
+        <div class="col-auto py-5">
+          Estudiantes
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+
+</html>
